@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className="flex py-8 justify-around items-center">
       <Link href={"/"}>
-        <h1 className="text-3xl  font-semibold">Deskspiration</h1>
+        <h1 className="text-3xl  font-bold">Deskspiration</h1>
       </Link>
       <a
         href="https://twitter.com/hussain__mt"
