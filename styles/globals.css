@@ -59,6 +59,14 @@ a {
 .img-child {
   object-fit: contain;
 }
+.div-card-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 2rem;
+  margin-top: 3rem;
+}
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
