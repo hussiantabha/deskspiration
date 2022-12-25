@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Html } from "next/document";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
 import Head from "next/head";
