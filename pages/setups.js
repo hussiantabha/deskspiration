@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
+import { Html } from "next/document";
 import Navbar from "../components/Navbar";
 import Image from "next/image";
-import LazyLoad from "react-lazy-load";
 import Head from "next/head";
 import toast, { Toaster } from "react-hot-toast";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const Setups = ({ data }) => {
   const [setup, setSetup] = useState([]);
@@ -61,6 +62,7 @@ const Setups = ({ data }) => {
           name="description"
           content="find inspiration for you next desk setup"
         />
+        <link rel="icon" href="/working.ico" />
       </Head>
       <Navbar />
       <section className="flex flex-wrap justify-evenly items-center gap-y-[2rem] mt-[2.5rem] ">
@@ -104,16 +106,11 @@ const Setups = ({ data }) => {
                 rel="noopener noreferrer"
                 className="imgew"
               >
-                <LazyLoad offset={1000}>
-                  <img
-                    src={
-                      item.media.length > 0 ? item.media[0].link : item.cover
-                    }
-                    alt=""
-                    loading="lazy"
-                    className="rounded-t-lg"
-                  />
-                </LazyLoad>
+                <LazyLoadImage
+                  src={item.media.length > 0 ? item.media[0].link : item.cover}
+                  alt={item.excerpt}
+                  effect="opacity"
+                />
               </a>
               <div className="p-5">
                 <a href="#">

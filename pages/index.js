@@ -15,7 +15,7 @@ export default function Home() {
           name="description"
           content="find inspiration for you next desk setup"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/working.ico" />
         <link
           rel="stylesheet"
           href="https://cdn.lineicons.com/3.0/lineicons.css"
