@@ -5,7 +5,6 @@ import { BiRightArrow } from "react-icons/bi";
 const Guides = ({ response }) => {
   const [blog, setBlogs] = useState([]);
 
-  console.log(response);
   return (
     <>
       <Navbar />
@@ -47,7 +46,6 @@ export async function getServerSideProps(context) {
   const response = await notion.databases.query({
     database_id: "3f92115be15943ff8648c3a560e48acd",
   });
-  console.log(response);
   return {
     props: {
       response,

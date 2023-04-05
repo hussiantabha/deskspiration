@@ -4,17 +4,18 @@ import Image from "next/image";
 import Head from "next/head";
 import toast, { Toaster } from "react-hot-toast";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { supabase } from "../supabse-config";
 
 const Setups = ({ data }) => {
   const [setup, setSetup] = useState([]);
   const [deskInfo, setDeskInfo] = useState([]);
+  // filter setups on different tags
   const filterItems = (category) => {
     const filter = deskInfo.filter((item) => {
       return category === "all" ? item : item.data.tags.includes(category);
     });
     setSetup(filter);
   };
+  // fetches data from server
   const getData = async () => {
     const data = await fetch("./api/data");
     if (data.status === 200) {
@@ -23,6 +24,7 @@ const Setups = ({ data }) => {
       setSetup(convertedJSON.desk);
     }
   };
+
   useEffect(() => {
     getData();
     // setSetup(data);
@@ -54,13 +56,6 @@ const Setups = ({ data }) => {
       name: "Home-office",
       value: "office",
     },
-    // "All",
-    // "designer",
-    // "engineer",
-    // "creator",
-    // "gaming",
-    // "students",
-    // "office",
   ];
   return (
     <div className="px-[0.75rem] pb-8 mt-[10rem]">
@@ -71,7 +66,7 @@ const Setups = ({ data }) => {
           name="description"
           content="find inspiration for you next desk setup"
         />
-        <link rel="icon" href="/working.ico" />
+        <link rel="icon" href="/computer.ico" />
       </Head>
       <Navbar />
       <section className="flex flex-wrap justify-evenly items-center gap-y-[2rem] mt-[2.5rem] ">
