@@ -181,6 +181,7 @@ export async function getServerSideProps(context) {
   };
 }
 export default Setups;
+<<<<<<< Updated upstream
 
 //a card component
 {
@@ -231,3 +232,5 @@ export default Setups;
           </div>
         </div> */
 }
+=======
+>>>>>>> Stashed changes
